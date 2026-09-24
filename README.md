@@ -32,4 +32,4 @@
 
 ## Ссылка на учебный проект
 
-https://tensa1ka.github.io/kr1-html-css-shop/git branch
+https://tensa1ka.github.io/kr1-html-css-shop/git
