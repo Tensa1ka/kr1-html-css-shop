@@ -32,7 +32,7 @@
 
 ## Ссылка на учебный проект
 
-https://tensa1ka.github.io/kr1-html-css-shop/git
+https://tensa1ka.github.io/kr1-html-css-shop/
 
 ## Постановка контрольной работы №1
 
