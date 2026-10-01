@@ -237,10 +237,23 @@ footer {
 }
 
 /*
-  Карточка товара — самостоятельный блок.
-  На следующих занятиях карточки будут доработаны и выстроены в сетку.
+  Контейнер карточек товаров — CSS Grid.
+  Карточки автоматически распределяются по колонкам
+  и переносятся на новую строку, если не помещаются.
+*/
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+/*
+  Карточка товара — Flexbox-контейнер.
+  Элементы выстраиваются в колонку, кнопка всегда прижата к низу карточки.
 */
 .product-card {
+  display: flex;
+  flex-direction: column;
   margin-bottom: var(--space-md);
   padding: var(--space-md);
   border: 1px solid var(--color-border);
@@ -252,12 +265,25 @@ footer {
   border-color: var(--color-primary);
 }
 
+.product-card__img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-sm);
+}
 
-/*
-  Убираем лишний верхний отступ у заголовка карточки.
-*/
-.product-card h3 {
-  margin-top: 0;
+.product-card__title {
+  margin: 0 0 var(--space-sm);
+}
+
+.product-card__description {
+  color: var(--color-muted);
+  flex-grow: 1; /* растягивается, "выталкивая" цену и кнопку вниз */
+}
+
+.product-card__price {
+  font-weight: bold;
+  margin: var(--space-sm) 0;
 }
 
 /*
