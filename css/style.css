@@ -163,6 +163,16 @@ header {
   background-color: var(--color-surface);
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+[id] {
+  scroll-margin-top: 150px;
+}
 /*
   Оформляем подвал страницы тем же фоном,
   чтобы визуально отделить его от основного содержимого.
