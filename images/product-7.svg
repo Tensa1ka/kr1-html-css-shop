@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#fdf1e7"/>
+  <circle cx="330" cy="60" r="70" fill="#b3541e" opacity="0.08"/>
+  <circle cx="60" cy="260" r="90" fill="#b3541e" opacity="0.06"/>
+  <g transform="translate(200 145)">
+    <polygon points="0,-75 80,-35 0,5 -80,-35" fill="#b3541e" opacity="0.55"/>
+    <polygon points="-80,-35 0,5 0,85 -80,45" fill="#b3541e" opacity="0.85"/>
+    <polygon points="80,-35 0,5 0,85 80,45" fill="#b3541e"/>
+    <polygon points="-40,-55 40,-15 40,0 -40,-40" fill="#ffffff" opacity="0.35"/>
+  </g>
+  <text x="200" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#b3541e">Товар 7</text>
+</svg>

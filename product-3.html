@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Карточка товара «Товар 3»: описание, характеристики, доставка, частые вопросы.">
+  <title>Товар 3 – Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Учебный интернет-магазин">
+  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:image" content="https://Tensa1ka.github.io/kr1-html-css-shop/images/preview.jpg">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__separator" aria-hidden="true">/</span>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__separator" aria-hidden="true">/</span>
+      <span class="breadcrumbs__current">Товар 3</span>
+    </nav>
+
+    <article class="product">
+      <div class="product__gallery">
+        <span class="product__badge product__badge--sale">Скидка −20%</span>
+        <img class="product__img" src="images/product-3.svg" alt="Товар 3" width="400" height="300">
+      </div>
+
+      <div class="product__info">
+        <p class="product__category">Популярные</p>
+        <h1 class="product__title">Товар 3</h1>
+        <p class="product__sku">Артикул: SP-0003</p>
+
+        <p class="product__price product__price--discount">1600 руб. <s class="product__old-price">2000 руб.</s></p>
+        <p class="product__stock product__stock--available">В наличии</p>
+
+        <p class="product__description">Компактная модель по специальной цене – скидка действует до конца месяца.</p>
+
+        <ul class="product__features">
+          <li class="product__feature">Гарантия 12 месяцев</li>
+          <li class="product__feature">Доставка по Москве за 1–2 дня</li>
+          <li class="product__feature">Возврат в течение 14 дней</li>
+        </ul>
+
+        <div class="product__actions">
+          <a class="button button--primary" href="order.html">Оформить заявку</a>
+          <a class="button button--secondary" href="catalog.html">Вернуться в каталог</a>
+        </div>
+
+        <div class="product__delivery">
+          <h2 class="product__delivery-title">Доставка и оплата</h2>
+          <ul class="product__delivery-list">
+            <li class="product__delivery-item">Самовывоз – бесплатно, в день заказа</li>
+            <li class="product__delivery-item">Курьер по Москве – 300 руб., 1–2 дня</li>
+            <li class="product__delivery-item">Оплата при получении картой или наличными</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <section class="section">
+      <h2 class="section__title">Описание</h2>
+      <p>
+        Компактная модель по специальной цене – скидка действует до конца месяца. Товар поставляется в фирменной упаковке. В комплект входят
+        сам товар, инструкция и гарантийный талон.
+      </p>
+    </section>
+
+    <section class="section" id="specs">
+      <h2 class="section__title">Характеристики</h2>
+
+      <table class="product-table">
+        <caption class="product-table__caption">Характеристики товара «Товар 3»</caption>
+        <thead>
+          <tr>
+            <th class="product-table__head" scope="col">Параметр</th>
+            <th class="product-table__head" scope="col">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="product-table__cell">Категория</td>
+            <td class="product-table__cell">Популярные</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Артикул</td>
+            <td class="product-table__cell">SP-0003</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Цена</td>
+            <td class="product-table__cell">1600 руб. (вместо 2000 руб.)</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Наличие</td>
+            <td class="product-table__cell">В наличии</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Размеры (Д × Ш × В)</td>
+            <td class="product-table__cell">18 × 14 × 9 см</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Вес</td>
+            <td class="product-table__cell">0,4 кг</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Комплектация</td>
+            <td class="product-table__cell">Товар, инструкция, гарантийный талон</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Гарантия</td>
+            <td class="product-table__cell">12 месяцев</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="faq">
+      <h2 class="section__title">Часто задаваемые вопросы</h2>
+
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__question">Как оформить заказ?</summary>
+          <p class="faq__answer">Нажмите «Оформить заявку», заполните форму и отправьте её. Менеджер свяжется с вами, чтобы подтвердить заказ.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Сколько стоит доставка?</summary>
+          <p class="faq__answer">Самовывоз бесплатный. Курьерская доставка по Москве стоит 300 руб. и занимает 1–2 дня.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Как оплатить заказ?</summary>
+          <p class="faq__answer">Оплата производится при получении – банковской картой или наличными.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Можно ли вернуть товар?</summary>
+          <p class="faq__answer">Да, в течение 14 дней, если сохранены упаковка и товарный вид.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Что делать, если товара нет в наличии?</summary>
+          <p class="faq__answer">Оставьте заявку – мы сообщим, когда товар снова появится на складе.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Похожие товары</h2>
+
+      <div class="products-grid">
+        <article class="product-card product-card--featured">
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+          <img class="product-card__img" src="images/product-1.svg" alt="Товар 1" width="400" height="300">
+          <p class="product-card__category">Популярные</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Товар 1</a></h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
+          <p class="product-card__price">1000 руб.</p>
+          <div class="product-card__actions">
+            <a class="button button--primary product-card__action" href="product.html">Подробнее</a>
+            <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img class="product-card__img" src="images/product-2.svg" alt="Товар 2" width="400" height="300">
+          <p class="product-card__category">Популярные</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product-2.html">Товар 2</a></h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
+          <p class="product-card__price">1500 руб.</p>
+          <div class="product-card__actions">
+            <a class="button button--primary product-card__action" href="product-2.html">Подробнее</a>
+            <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card product-card--featured">
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+          <img class="product-card__img" src="images/product-8.svg" alt="Товар 8" width="400" height="300">
+          <p class="product-card__category">Популярные</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product-8.html">Товар 8</a></h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
+          <p class="product-card__price">1800 руб.</p>
+          <div class="product-card__actions">
+            <a class="button button--primary product-card__action" href="product-8.html">Подробнее</a>
+            <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+</body>
+</html>

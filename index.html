@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Учебный интернет-магазин: популярные товары, преимущества и заявка на покупку.">
   <title>Учебный интернет-магазин</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
@@ -24,6 +25,12 @@
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="contacts.html">Контакты</a>
@@ -69,32 +76,47 @@
 
       <div class="products-grid">
         <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Товар 1</h3>
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+          <img class="product-card__img" src="images/product-1.svg" alt="Товар 1" width="400" height="300">
+          <p class="product-card__category">Популярные</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Товар 1</a></h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
+          <p class="product-card__price">1000 руб.</p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__action product-card__button" type="button" data-product="Товар 1">Заказать</button>
+            <a class="button button--secondary product-card__action" href="product.html">Подробнее</a>
+          </div>
         </article>
 
         <article class="product-card">
-          <h3 class="product-card__title">Товар 2</h3>
+          <img class="product-card__img" src="images/product-2.svg" alt="Товар 2" width="400" height="300">
+          <p class="product-card__category">Популярные</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product-2.html">Товар 2</a></h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
-            Заказать
-          </button>
+          <p class="product-card__price">1500 руб.</p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__action product-card__button" type="button" data-product="Товар 2">Заказать</button>
+            <a class="button button--secondary product-card__action" href="product-2.html">Подробнее</a>
+          </div>
         </article>
 
         <article class="product-card product-card--discount">
-          <h3 class="product-card__title">Товар 3</h3>
+          <span class="product-card__badge product-card__badge--sale">Скидка −20%</span>
+          <img class="product-card__img" src="images/product-3.svg" alt="Товар 3" width="400" height="300">
+          <p class="product-card__category">Популярные</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product-3.html">Товар 3</a></h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
-            Заказать
-          </button>
+          <p class="product-card__price">1600 руб. <s class="product-card__old-price">2000 руб.</s></p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__action product-card__button" type="button" data-product="Товар 3">Заказать</button>
+            <a class="button button--secondary product-card__action" href="product-3.html">Подробнее</a>
+          </div>
         </article>
       </div>
+
+      <p class="section__more">
+        <a class="section__more-link" href="catalog.html">Смотреть весь каталог (9 товаров) &rarr;</a>
+      </p>
     </section>
 
     <section class="section">
