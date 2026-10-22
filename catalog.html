@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина: 9 товаров, категории, фильтры и цены.">
+  <meta name="description" content="Каталог электроники и гаджетов: наушники, колонки, умные часы, клавиатуры и аксессуары.">
   <title>Каталог товаров – Учебный интернет-магазин</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap">
   <link rel="stylesheet" href="css/style.css">
 
   <meta property="og:type" content="website">
@@ -15,7 +18,7 @@
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">Shop<span class="site-header__logo-accent">Project</span></a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -58,8 +61,8 @@
     <section class="section">
       <h1 class="section__title">Каталог товаров</h1>
       <p>
-        В каталоге собраны все товары учебного магазина: популярные позиции,
-        новинки и товары со скидкой. Используйте фильтры, чтобы выбрать
+        В каталоге – наушники, колонки, умные часы, клавиатуры и другие гаджеты:
+        популярные модели, новинки и товары со скидкой. Используйте фильтры, чтобы выбрать
         категорию и диапазон цен.
       </p>
     </section>
@@ -97,10 +100,10 @@
             <legend class="catalog-filters__legend">Цена, руб.</legend>
 
             <label class="catalog-filters__label" for="price-from">От</label>
-            <input class="catalog-filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="800">
+            <input class="catalog-filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="1990">
 
             <label class="catalog-filters__label" for="price-to">До</label>
-            <input class="catalog-filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="3000">
+            <input class="catalog-filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="7490">
           </fieldset>
 
           <fieldset class="catalog-filters__group">
@@ -125,113 +128,113 @@
         <div class="products-grid">
           <article class="product-card product-card--featured">
             <span class="product-card__badge product-card__badge--hit">Хит</span>
-            <img class="product-card__img" src="images/product-1.svg" alt="Товар 1" width="400" height="300">
+            <img class="product-card__img" src="images/product-1.svg" alt="Беспроводные наушники Pulse" width="400" height="300">
             <p class="product-card__category">Популярные</p>
-            <h3 class="product-card__title"><a class="product-card__link" href="product.html">Товар 1</a></h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">1000 руб.</p>
+            <h3 class="product-card__title"><a class="product-card__link" href="product.html">Беспроводные наушники Pulse</a></h3>
+            <p class="product-card__description">Полноразмерные наушники с шумоподавлением и 30 часами работы.</p>
+            <p class="product-card__price">5990 руб.</p>
             <div class="product-card__actions">
               <a class="button button--primary product-card__action" href="product.html">Подробнее</a>
-              <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+              <a class="button button--secondary product-card__action" href="order.html?product=product-1">Заказать</a>
             </div>
           </article>
 
           <article class="product-card">
-            <img class="product-card__img" src="images/product-2.svg" alt="Товар 2" width="400" height="300">
+            <img class="product-card__img" src="images/product-2.svg" alt="Портативная колонка Wave" width="400" height="300">
             <p class="product-card__category">Популярные</p>
-            <h3 class="product-card__title"><a class="product-card__link" href="product-2.html">Товар 2</a></h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">1500 руб.</p>
+            <h3 class="product-card__title"><a class="product-card__link" href="product-2.html">Портативная колонка Wave</a></h3>
+            <p class="product-card__description">Компактная колонка с защитой от воды и мощным звуком.</p>
+            <p class="product-card__price">3490 руб.</p>
             <div class="product-card__actions">
               <a class="button button--primary product-card__action" href="product-2.html">Подробнее</a>
-              <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+              <a class="button button--secondary product-card__action" href="order.html?product=product-2">Заказать</a>
             </div>
           </article>
 
           <article class="product-card product-card--discount">
             <span class="product-card__badge product-card__badge--sale">Скидка −20%</span>
-            <img class="product-card__img" src="images/product-3.svg" alt="Товар 3" width="400" height="300">
+            <img class="product-card__img" src="images/product-3.svg" alt="Умные часы Fit S" width="400" height="300">
             <p class="product-card__category">Популярные</p>
-            <h3 class="product-card__title"><a class="product-card__link" href="product-3.html">Товар 3</a></h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">1600 руб. <s class="product-card__old-price">2000 руб.</s></p>
+            <h3 class="product-card__title"><a class="product-card__link" href="product-3.html">Умные часы Fit S</a></h3>
+            <p class="product-card__description">Пульс, сон, шаги и GPS – до 10 дней без зарядки.</p>
+            <p class="product-card__price">7190 руб. <s class="product-card__old-price">8990 руб.</s></p>
             <div class="product-card__actions">
               <a class="button button--primary product-card__action" href="product-3.html">Подробнее</a>
-              <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+              <a class="button button--secondary product-card__action" href="order.html?product=product-3">Заказать</a>
             </div>
           </article>
 
           <article class="product-card product-card--new">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <img class="product-card__img" src="images/product-4.svg" alt="Товар 4" width="400" height="300">
+            <img class="product-card__img" src="images/product-4.svg" alt="Механическая клавиатура K87" width="400" height="300">
             <p class="product-card__category">Новинки</p>
-            <h3 class="product-card__title"><a class="product-card__link" href="product-4.html">Товар 4</a></h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">2500 руб.</p>
+            <h3 class="product-card__title"><a class="product-card__link" href="product-4.html">Механическая клавиатура K87</a></h3>
+            <p class="product-card__description">Компактная клавиатура без цифрового блока с RGB-подсветкой.</p>
+            <p class="product-card__price">7490 руб.</p>
             <div class="product-card__actions">
               <a class="button button--primary product-card__action" href="product-4.html">Подробнее</a>
-              <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+              <a class="button button--secondary product-card__action" href="order.html?product=product-4">Заказать</a>
             </div>
           </article>
 
           <article class="product-card">
-            <img class="product-card__img" src="images/product-5.svg" alt="Товар 5" width="400" height="300">
+            <img class="product-card__img" src="images/product-5.svg" alt="Беспроводная мышь Glide" width="400" height="300">
             <p class="product-card__category">Новинки</p>
-            <h3 class="product-card__title"><a class="product-card__link" href="product-5.html">Товар 5</a></h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">1200 руб.</p>
+            <h3 class="product-card__title"><a class="product-card__link" href="product-5.html">Беспроводная мышь Glide</a></h3>
+            <p class="product-card__description">Тихие клики, два способа подключения, до 70 дней работы.</p>
+            <p class="product-card__price">1990 руб.</p>
             <div class="product-card__actions">
               <a class="button button--primary product-card__action" href="product-5.html">Подробнее</a>
-              <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+              <a class="button button--secondary product-card__action" href="order.html?product=product-5">Заказать</a>
             </div>
           </article>
 
           <article class="product-card product-card--new">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <img class="product-card__img" src="images/product-6.svg" alt="Товар 6" width="400" height="300">
+            <img class="product-card__img" src="images/product-6.svg" alt="Веб-камера Full HD" width="400" height="300">
             <p class="product-card__category">Новинки</p>
-            <h3 class="product-card__title"><a class="product-card__link" href="product-6.html">Товар 6</a></h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">3000 руб.</p>
+            <h3 class="product-card__title"><a class="product-card__link" href="product-6.html">Веб-камера Full HD</a></h3>
+            <p class="product-card__description">Чёткое видео 1080p и стереомикрофон для звонков и учёбы.</p>
+            <p class="product-card__price">3990 руб.</p>
             <div class="product-card__actions">
               <a class="button button--primary product-card__action" href="product-6.html">Подробнее</a>
-              <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+              <a class="button button--secondary product-card__action" href="order.html?product=product-6">Заказать</a>
             </div>
           </article>
 
           <article class="product-card product-card--discount">
-            <span class="product-card__badge product-card__badge--sale">Скидка −27%</span>
-            <img class="product-card__img" src="images/product-7.svg" alt="Товар 7" width="400" height="300">
+            <span class="product-card__badge product-card__badge--sale">Скидка −29%</span>
+            <img class="product-card__img" src="images/product-7.svg" alt="Внешний аккумулятор 20 000 мА·ч" width="400" height="300">
             <p class="product-card__category">Распродажа</p>
-            <h3 class="product-card__title"><a class="product-card__link" href="product-7.html">Товар 7</a></h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">800 руб. <s class="product-card__old-price">1100 руб.</s></p>
+            <h3 class="product-card__title"><a class="product-card__link" href="product-7.html">Внешний аккумулятор 20 000 мА·ч</a></h3>
+            <p class="product-card__description">Зарядит телефон 4–5 раз. Три порта и быстрая зарядка.</p>
+            <p class="product-card__price">1990 руб. <s class="product-card__old-price">2790 руб.</s></p>
             <div class="product-card__actions">
               <a class="button button--primary product-card__action" href="product-7.html">Подробнее</a>
-              <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+              <a class="button button--secondary product-card__action" href="order.html?product=product-7">Заказать</a>
             </div>
           </article>
 
           <article class="product-card product-card--featured">
             <span class="product-card__badge product-card__badge--hit">Хит</span>
-            <img class="product-card__img" src="images/product-8.svg" alt="Товар 8" width="400" height="300">
+            <img class="product-card__img" src="images/product-8.svg" alt="Игровая гарнитура Storm" width="400" height="300">
             <p class="product-card__category">Популярные</p>
-            <h3 class="product-card__title"><a class="product-card__link" href="product-8.html">Товар 8</a></h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">1800 руб.</p>
+            <h3 class="product-card__title"><a class="product-card__link" href="product-8.html">Игровая гарнитура Storm</a></h3>
+            <p class="product-card__description">Объёмный звук 7.1 и микрофон с шумоподавлением для игр.</p>
+            <p class="product-card__price">4490 руб.</p>
             <div class="product-card__actions">
               <a class="button button--primary product-card__action" href="product-8.html">Подробнее</a>
-              <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+              <a class="button button--secondary product-card__action" href="order.html?product=product-8">Заказать</a>
             </div>
           </article>
 
           <article class="product-card product-card--sold-out">
             <span class="product-card__badge product-card__badge--sold-out">Нет в наличии</span>
-            <img class="product-card__img" src="images/product-9.svg" alt="Товар 9" width="400" height="300">
+            <img class="product-card__img" src="images/product-9.svg" alt="Зарядная станция 3 в 1" width="400" height="300">
             <p class="product-card__category">Распродажа</p>
-            <h3 class="product-card__title"><a class="product-card__link" href="product-9.html">Товар 9</a></h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">2200 руб.</p>
+            <h3 class="product-card__title"><a class="product-card__link" href="product-9.html">Зарядная станция 3 в 1</a></h3>
+            <p class="product-card__description">Заряжает телефон, часы и наушники одновременно.</p>
+            <p class="product-card__price">3290 руб.</p>
             <div class="product-card__actions">
               <a class="button button--primary product-card__action" href="product-9.html">Подробнее</a>
               <button class="button button--secondary product-card__action" type="button" disabled>Заказать</button>
@@ -246,5 +249,7 @@
     <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
     <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Вернуться в начало страницы">&uarr; Наверх</a>
 </body>
 </html>

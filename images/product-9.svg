@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-  <rect width="400" height="300" fill="#f1f1f1"/>
-  <circle cx="330" cy="60" r="70" fill="#6b6b6b" opacity="0.08"/>
-  <circle cx="60" cy="260" r="90" fill="#6b6b6b" opacity="0.06"/>
-  <g transform="translate(200 145)">
-    <polygon points="0,-75 80,-35 0,5 -80,-35" fill="#6b6b6b" opacity="0.55"/>
-    <polygon points="-80,-35 0,5 0,85 -80,45" fill="#6b6b6b" opacity="0.85"/>
-    <polygon points="80,-35 0,5 0,85 80,45" fill="#6b6b6b"/>
-    <polygon points="-40,-55 40,-15 40,0 -40,-40" fill="#ffffff" opacity="0.35"/>
-  </g>
-  <text x="200" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#6b6b6b">Товар 9</text>
+  <rect width="400" height="300" fill="#f1f0f4"/>
+  <circle cx="335" cy="55" r="75" fill="#77738a" opacity="0.07"/>
+  <circle cx="55" cy="265" r="95" fill="#77738a" opacity="0.06"/>
+  <rect x="85" y="215" width="230" height="22" rx="11" fill="#77738a"/>
+  <path d="M150 215 L170 80 H230 L250 215 Z" fill="#77738a" opacity="0.55"/>
+  <rect x="168" y="62" width="64" height="120" rx="12" fill="#77738a"/>
+  <rect x="174" y="70" width="52" height="104" rx="8" fill="#ffffff" opacity="0.35"/>
+  <circle cx="275" cy="195" r="20" fill="#77738a"/>
+  <circle cx="275" cy="195" r="12" fill="#ffffff" opacity="0.4"/>
+  <rect x="104" y="183" width="44" height="28" rx="14" fill="#77738a"/>
 </svg>

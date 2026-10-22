@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Карточка товара «Товар 6»: описание, характеристики, доставка, частые вопросы.">
-  <title>Товар 6 – Учебный интернет-магазин</title>
+  <meta name="description" content="Карточка товара «Веб-камера Full HD»: описание, характеристики, доставка, частые вопросы.">
+  <title>Веб-камера Full HD – Учебный интернет-магазин</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap">
   <link rel="stylesheet" href="css/style.css">
 
   <meta property="og:type" content="website">
@@ -15,7 +18,7 @@
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">Shop<span class="site-header__logo-accent">Project</span></a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -54,33 +57,33 @@
       <span class="breadcrumbs__separator" aria-hidden="true">/</span>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
       <span class="breadcrumbs__separator" aria-hidden="true">/</span>
-      <span class="breadcrumbs__current">Товар 6</span>
+      <span class="breadcrumbs__current">Веб-камера Full HD</span>
     </nav>
 
     <article class="product">
       <div class="product__gallery">
         <span class="product__badge product__badge--new">Новинка</span>
-        <img class="product__img" src="images/product-6.svg" alt="Товар 6" width="400" height="300">
+        <img class="product__img" src="images/product-6.svg" alt="Веб-камера Full HD" width="400" height="300">
       </div>
 
       <div class="product__info">
         <p class="product__category">Новинки</p>
-        <h1 class="product__title">Товар 6</h1>
-        <p class="product__sku">Артикул: SP-0006</p>
+        <h1 class="product__title">Веб-камера Full HD</h1>
+        <p class="product__sku">Артикул: GD-1006</p>
 
-        <p class="product__price">3000 руб.</p>
+        <p class="product__price">3990 руб.</p>
         <p class="product__stock product__stock--available">В наличии</p>
 
-        <p class="product__description">Новинка в расширенной комплектации для тех, кому нужно больше возможностей.</p>
+        <p class="product__description">Чёткое видео 1080p и стереомикрофон для звонков и учёбы.</p>
 
         <ul class="product__features">
-          <li class="product__feature">Гарантия 12 месяцев</li>
-          <li class="product__feature">Доставка по Москве за 1–2 дня</li>
-          <li class="product__feature">Возврат в течение 14 дней</li>
+          <li class="product__feature">Full HD 1080p, автофокус</li>
+          <li class="product__feature">Стереомикрофон</li>
+          <li class="product__feature">Подключение без драйверов</li>
         </ul>
 
         <div class="product__actions">
-          <a class="button button--primary" href="order.html">Оформить заявку</a>
+          <a class="button button--primary" href="order.html?product=product-6">Оформить заявку</a>
           <a class="button button--secondary" href="catalog.html">Вернуться в каталог</a>
         </div>
 
@@ -98,8 +101,11 @@
     <section class="section">
       <h2 class="section__title">Описание</h2>
       <p>
-        Новинка в расширенной комплектации для тех, кому нужно больше возможностей. Товар поставляется в фирменной упаковке. В комплект входят
-        сам товар, инструкция и гарантийный талон.
+        Камера для онлайн-занятий и видеозвонков: автофокус держит лицо в резкости, а два микрофона чисто передают голос. Крепится на монитор или штатив, работает без установки драйверов.
+      </p>
+      <p>
+        Товар поставляется в фирменной коробке. В комплекте – кабель для зарядки,
+        инструкция на русском языке и гарантийный талон на 12 месяцев.
       </p>
     </section>
 
@@ -107,7 +113,7 @@
       <h2 class="section__title">Характеристики</h2>
 
       <table class="product-table">
-        <caption class="product-table__caption">Характеристики товара «Товар 6»</caption>
+        <caption class="product-table__caption">Характеристики товара «Веб-камера Full HD»</caption>
         <thead>
           <tr>
             <th class="product-table__head" scope="col">Параметр</th>
@@ -121,27 +127,43 @@
           </tr>
           <tr>
             <td class="product-table__cell">Артикул</td>
-            <td class="product-table__cell">SP-0006</td>
+            <td class="product-table__cell">GD-1006</td>
           </tr>
           <tr>
             <td class="product-table__cell">Цена</td>
-            <td class="product-table__cell">3000 руб.</td>
+            <td class="product-table__cell">3990 руб.</td>
           </tr>
           <tr>
             <td class="product-table__cell">Наличие</td>
             <td class="product-table__cell">В наличии</td>
           </tr>
           <tr>
-            <td class="product-table__cell">Размеры (Д × Ш × В)</td>
-            <td class="product-table__cell">35 × 25 × 18 см</td>
+            <td class="product-table__cell">Разрешение</td>
+            <td class="product-table__cell">Full HD 1080p, 30 к/с</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Фокус</td>
+            <td class="product-table__cell">Автофокус</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Угол обзора</td>
+            <td class="product-table__cell">90°</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Микрофон</td>
+            <td class="product-table__cell">Встроенный, стерео</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Подключение</td>
+            <td class="product-table__cell">USB-A, кабель 1,5 м</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Крепление</td>
+            <td class="product-table__cell">На монитор или штатив</td>
           </tr>
           <tr>
             <td class="product-table__cell">Вес</td>
-            <td class="product-table__cell">1,6 кг</td>
-          </tr>
-          <tr>
-            <td class="product-table__cell">Комплектация</td>
-            <td class="product-table__cell">Товар, инструкция, гарантийный талон</td>
+            <td class="product-table__cell">120 г</td>
           </tr>
           <tr>
             <td class="product-table__cell">Гарантия</td>
@@ -188,39 +210,39 @@
       <div class="products-grid">
         <article class="product-card product-card--new">
           <span class="product-card__badge product-card__badge--new">Новинка</span>
-          <img class="product-card__img" src="images/product-4.svg" alt="Товар 4" width="400" height="300">
+          <img class="product-card__img" src="images/product-4.svg" alt="Механическая клавиатура K87" width="400" height="300">
           <p class="product-card__category">Новинки</p>
-          <h3 class="product-card__title"><a class="product-card__link" href="product-4.html">Товар 4</a></h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">2500 руб.</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product-4.html">Механическая клавиатура K87</a></h3>
+          <p class="product-card__description">Компактная клавиатура без цифрового блока с RGB-подсветкой.</p>
+          <p class="product-card__price">7490 руб.</p>
           <div class="product-card__actions">
             <a class="button button--primary product-card__action" href="product-4.html">Подробнее</a>
-            <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+            <a class="button button--secondary product-card__action" href="order.html?product=product-4">Заказать</a>
           </div>
         </article>
 
         <article class="product-card">
-          <img class="product-card__img" src="images/product-5.svg" alt="Товар 5" width="400" height="300">
+          <img class="product-card__img" src="images/product-5.svg" alt="Беспроводная мышь Glide" width="400" height="300">
           <p class="product-card__category">Новинки</p>
-          <h3 class="product-card__title"><a class="product-card__link" href="product-5.html">Товар 5</a></h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">1200 руб.</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product-5.html">Беспроводная мышь Glide</a></h3>
+          <p class="product-card__description">Тихие клики, два способа подключения, до 70 дней работы.</p>
+          <p class="product-card__price">1990 руб.</p>
           <div class="product-card__actions">
             <a class="button button--primary product-card__action" href="product-5.html">Подробнее</a>
-            <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+            <a class="button button--secondary product-card__action" href="order.html?product=product-5">Заказать</a>
           </div>
         </article>
 
         <article class="product-card product-card--featured">
           <span class="product-card__badge product-card__badge--hit">Хит</span>
-          <img class="product-card__img" src="images/product-1.svg" alt="Товар 1" width="400" height="300">
+          <img class="product-card__img" src="images/product-1.svg" alt="Беспроводные наушники Pulse" width="400" height="300">
           <p class="product-card__category">Популярные</p>
-          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Товар 1</a></h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">1000 руб.</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Беспроводные наушники Pulse</a></h3>
+          <p class="product-card__description">Полноразмерные наушники с шумоподавлением и 30 часами работы.</p>
+          <p class="product-card__price">5990 руб.</p>
           <div class="product-card__actions">
             <a class="button button--primary product-card__action" href="product.html">Подробнее</a>
-            <a class="button button--secondary product-card__action" href="order.html">Заказать</a>
+            <a class="button button--secondary product-card__action" href="order.html?product=product-1">Заказать</a>
           </div>
         </article>
       </div>
@@ -231,5 +253,7 @@
     <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
     <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Вернуться в начало страницы">&uarr; Наверх</a>
 </body>
 </html>
