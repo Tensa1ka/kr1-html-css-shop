@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-  <rect width="400" height="300" fill="#fdf1e7"/>
-  <circle cx="330" cy="60" r="70" fill="#b3541e" opacity="0.08"/>
-  <circle cx="60" cy="260" r="90" fill="#b3541e" opacity="0.06"/>
-  <g transform="translate(200 145)">
-    <polygon points="0,-75 80,-35 0,5 -80,-35" fill="#b3541e" opacity="0.55"/>
-    <polygon points="-80,-35 0,5 0,85 -80,45" fill="#b3541e" opacity="0.85"/>
-    <polygon points="80,-35 0,5 0,85 80,45" fill="#b3541e"/>
-    <polygon points="-40,-55 40,-15 40,0 -40,-40" fill="#ffffff" opacity="0.35"/>
-  </g>
-  <text x="200" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#b3541e">Товар 7</text>
+  <rect width="400" height="300" fill="#fdf0e3"/>
+  <circle cx="335" cy="55" r="75" fill="#c4651c" opacity="0.07"/>
+  <circle cx="55" cy="265" r="95" fill="#c4651c" opacity="0.06"/>
+  <rect x="130" y="70" width="140" height="170" rx="22" fill="#c4651c"/>
+  <rect x="150" y="95" width="100" height="44" rx="8" fill="#1e1b2e"/>
+  <text x="200" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#7ef0c2">87%</text>
+  <path d="M206 160 l-18 30 h14 l-8 26 l26 -36 h-15 l9 -20 z" fill="#ffffff" opacity="0.9"/>
+  <rect x="152" y="236" width="22" height="8" rx="2" fill="#1e1b2e"/>
+  <rect x="190" y="236" width="22" height="8" rx="2" fill="#1e1b2e"/>
+  <rect x="228" y="237" width="16" height="6" rx="3" fill="#1e1b2e"/>
 </svg>

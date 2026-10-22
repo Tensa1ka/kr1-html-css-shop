@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Форма оформления заявки на покупку товара в учебном интернет-магазине.">
   <title>Оформление заявки – Учебный интернет-магазин</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 
@@ -16,7 +19,7 @@
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">Shop<span class="site-header__logo-accent">Project</span></a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -60,52 +63,73 @@
       <h1 class="section__title">Оформление заявки</h1>
       <p>Заполните форму, и менеджер свяжется с вами, чтобы подтвердить заказ.</p>
 
-      <p class="success-message" id="success-message" hidden>
-        Заявка успешно отправлена!
+      <p class="success-message" id="success-message" role="status" tabindex="-1" hidden>
+        Заявка успешно отправлена! Менеджер свяжется с вами в ближайшее время.
       </p>
 
       <form class="order-form order-form--page" id="order-page-form" action="#" method="post" novalidate>
-        <div class="order-form__field">
-          <label class="order-form__label" for="customer-name">Имя</label>
-          <input class="order-form__input" id="customer-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
-        </div>
+        <p class="order-form__note">Поля, отмеченные <span class="order-form__required">*</span>, обязательны для заполнения.</p>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="customer-email">E-mail</label>
-          <input class="order-form__input" id="customer-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
-        </div>
+        <fieldset class="order-form__fieldset">
+          <legend class="order-form__legend">Контактные данные</legend>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="customer-phone">Телефон</label>
-          <input class="order-form__input" id="customer-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
-          <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
-        </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="customer-name">Имя <span class="order-form__required" aria-hidden="true">*</span></label>
+            <input class="order-form__input" id="customer-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" aria-describedby="customer-name-error" required>
+            <p class="order-form__error" id="customer-name-error" aria-live="polite"></p>
+          </div>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-product">Товар</label>
-          <select class="order-form__select" id="order-product" name="product" required>
-            <option value="">Выберите товар</option>
-              <option value="product-1">Товар 1 – 1000 руб.</option>
-              <option value="product-2">Товар 2 – 1500 руб.</option>
-              <option value="product-3">Товар 3 – 1600 руб.</option>
-              <option value="product-4">Товар 4 – 2500 руб.</option>
-              <option value="product-5">Товар 5 – 1200 руб.</option>
-              <option value="product-6">Товар 6 – 3000 руб.</option>
-              <option value="product-7">Товар 7 – 800 руб.</option>
-              <option value="product-8">Товар 8 – 1800 руб.</option>
-          </select>
-        </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="customer-email">E-mail <span class="order-form__required" aria-hidden="true">*</span></label>
+            <input class="order-form__input" id="customer-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" aria-describedby="customer-email-error" required>
+            <p class="order-form__error" id="customer-email-error" aria-live="polite"></p>
+          </div>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-comment">Комментарий</label>
-          <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
-        </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="customer-phone">Телефон <span class="order-form__required" aria-hidden="true">*</span></label>
+            <input class="order-form__input" id="customer-phone" name="phone" type="tel" placeholder="+7 (900) 000-00-00" inputmode="tel" autocomplete="tel" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" aria-describedby="customer-phone-hint customer-phone-error" required>
+            <small class="order-form__hint" id="customer-phone-hint">Формат: +7 (900) 000-00-00</small>
+            <p class="order-form__error" id="customer-phone-error" aria-live="polite"></p>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-form__fieldset">
+          <legend class="order-form__legend">Заказ</legend>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-product">Товар <span class="order-form__required" aria-hidden="true">*</span></label>
+            <select class="order-form__select" id="order-product" name="product" aria-describedby="order-product-error" required>
+              <option value="">Выберите товар</option>
+              <option value="product-1">Беспроводные наушники Pulse – 5990 руб.</option>
+              <option value="product-2">Портативная колонка Wave – 3490 руб.</option>
+              <option value="product-3">Умные часы Fit S – 7190 руб.</option>
+              <option value="product-4">Механическая клавиатура K87 – 7490 руб.</option>
+              <option value="product-5">Беспроводная мышь Glide – 1990 руб.</option>
+              <option value="product-6">Веб-камера Full HD – 3990 руб.</option>
+              <option value="product-7">Внешний аккумулятор 20 000 мА·ч – 1990 руб.</option>
+              <option value="product-8">Игровая гарнитура Storm – 4490 руб.</option>
+            </select>
+            <p class="order-form__error" id="order-product-error" aria-live="polite"></p>
+          </div>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-quantity">Количество</label>
+            <input class="order-form__input order-form__input--short" id="order-quantity" name="quantity" type="number" min="1" max="10" value="1" aria-describedby="order-quantity-error">
+            <p class="order-form__error" id="order-quantity-error" aria-live="polite"></p>
+          </div>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-comment">Комментарий</label>
+            <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
+          </div>
+        </fieldset>
 
         <div class="order-form__field order-form__field--checkbox">
           <label class="order-form__label">
-            <input class="order-form__checkbox" id="order-agreement" name="agreement" type="checkbox" required>
-            Я согласен на обработку данных
+            <input class="order-form__checkbox" id="order-agreement" name="agreement" type="checkbox" aria-describedby="order-agreement-error" required>
+            Я согласен на обработку персональных данных <span class="order-form__required" aria-hidden="true">*</span>
           </label>
+          <p class="order-form__error" id="order-agreement-error" aria-live="polite"></p>
         </div>
 
         <div class="order-form__actions">
@@ -120,5 +144,7 @@
     <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
     <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Вернуться в начало страницы">&uarr; Наверх</a>
 </body>
 </html>
