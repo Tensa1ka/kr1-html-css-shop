@@ -1,0 +1,50 @@
+<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+  <button class="order-dialog__close" type="button" aria-label="Закрыть окно" data-close-dialog>&times;</button>
+
+  <h2 class="order-dialog__title" id="order-dialog-title">Заказать в 1 клик</h2>
+  <p class="order-dialog__product" id="order-dialog-product"></p>
+  <p class="order-form__note">Заполните контакты, чтобы сохранить заявку. Оплата на сайте пока недоступна.</p>
+
+  <form class="order-form" id="order-form" method="dialog" novalidate>
+    <div class="order-form__field">
+      <label class="order-form__label" for="order-name">Имя</label>
+      <input class="order-form__input" id="order-name" name="name" type="text" minlength="2"
+             autocomplete="given-name" aria-describedby="order-name-error" required autofocus>
+      <p class="order-form__error" id="order-name-error" aria-live="polite"></p>
+    </div>
+
+    <div class="order-form__field">
+      <label class="order-form__label" for="order-phone">Телефон</label>
+      <input class="order-form__input" id="order-phone" name="phone" type="tel" placeholder="+7 (900) 000-00-00"
+             inputmode="tel" autocomplete="tel" pattern="^(?:\+7|8)[ \(\)\d\-]{10,16}$"
+             aria-describedby="order-phone-hint order-phone-error" required>
+      <small class="order-form__hint" id="order-phone-hint">Например, +7 (900) 000-00-00</small>
+      <p class="order-form__error" id="order-phone-error" aria-live="polite"></p>
+    </div>
+
+    <div class="order-form__field">
+      <label class="order-form__label" for="order-email">E-mail (необязательно)</label>
+      <input class="order-form__input" id="order-email" name="email" type="email" placeholder="name@example.com"
+             autocomplete="email" aria-describedby="order-email-error">
+      <p class="order-form__error order-form__error--reserved" id="order-email-error" aria-live="polite"></p>
+    </div>
+
+    <div class="order-form__field">
+      <label class="order-form__label" for="quick-quantity">Количество</label>
+      <select class="order-form__select order-form__input--short" id="quick-quantity" name="quantity"></select>
+    </div>
+
+    <p class="order-cart__total" data-quick-total aria-live="polite"></p>
+
+    <div class="order-form__actions">
+      <button class="button button--primary" type="submit">Подготовить заявку</button>
+    </div>
+  </form>
+
+  <div class="order-dialog__success" id="order-dialog-success" hidden>
+    <p class="order-dialog__success-title">Заявка готова</p>
+    <p class="order-dialog__success-text">Скачайте копию. Данные остаются на вашем устройстве.</p>
+    <a class="button button--primary" data-order-download download="circuit-lane-order.txt">Скачать заявку</a>
+    <button class="button button--secondary" type="button" data-close-dialog>Готово</button>
+  </div>
+</dialog>

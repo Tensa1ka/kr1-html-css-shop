@@ -3,223 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Учебный интернет-магазин электроники и гаджетов: популярные товары и заявка на покупку.">
-  <title>Учебный интернет-магазин</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap">
+  <meta name="description" content="Circuit Lane — электроника и аксессуары. Наушники, колонки, умные часы и техника для работы.">
+  <title>Circuit Lane · Электроника и гаджеты</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <script defer src="js/storefront.js"></script>
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://Tensa1ka.github.io/kr1-html-css-shop/images/preview.jpg">
+  <meta property="og:title" content="Circuit Lane · Электроника и гаджеты">
+  <meta property="og:description" content="Circuit Lane — электроника и аксессуары. Наушники, колонки, умные часы и техника для работы.">
 </head>
-<body>
+<body id="top">
+  <a class="skip-link" href="#main-content">К основному содержанию</a>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">Shop<span class="site-header__logo-accent">Project</span></a>
+      <a class="site-header__logo" href="index.html">Circuit<span class="site-header__logo-accent"> Lane</span></a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="product.html">Товар</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="order.html">Заявка</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
-          </li>
+          <li><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
+          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
+
+      <a class="site-header__cart" href="cart.html">
+        Корзина <span class="site-header__count" data-cart-count hidden>0</span>
+      </a>
     </div>
   </header>
 
-  <main class="site-main">
+  <main class="site-main" id="main-content" tabindex="-1">
     <section class="hero">
-      <h1 class="hero__title">Учебный интернет-магазин</h1>
-      <p class="hero__text">
-        ShopProject – учебный интернет-магазин электроники и гаджетов:
-        наушники, колонки, умные часы и аксессуары для учёбы, работы и игр.
-      </p>
-      <a class="button button--primary hero__button" href="#popular">Перейти к товарам</a>
+      <div class="hero__content">
+        <p class="hero__category">Беспроводные наушники Pulse</p>
+        <h1 class="hero__title">Звук без лишнего шума</h1>
+        <p class="hero__text">Активное шумоподавление и до 30 часов работы. Для музыки в дороге, дома и в офисе.</p>
+        <div class="hero__actions">
+          <a class="button hero__button" href="product.html">Смотреть Pulse <span aria-hidden="true">→</span></a>
+          <a class="hero__catalog-link" href="catalog.html">Весь каталог</a>
+        </div>
+      </div>
+      <img class="hero__image" src="images/unsplash/pulse-960.webp"
+           srcset="images/unsplash/pulse-320.webp 320w, images/unsplash/pulse-640.webp 640w, images/unsplash/pulse-960.webp 960w"
+           sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1312px) calc(52vw - 33px), 649px"
+           width="640" height="480" fetchpriority="high"
+           alt="Чёрные беспроводные наушники Pulse на жёлтом фоне">
     </section>
 
     <section class="section" id="advantages">
-      <h2 class="section__title">Преимущества проекта</h2>
+      <div class="section__heading">
+        <h2 class="section__title">Категории</h2>
+      </div>
 
-      <ul class="advantages-list">
-        <li class="advantages-list__item">понятная HTML-структура;</li>
-        <li class="advantages-list__item">семантические блоки страницы;</li>
-        <li class="advantages-list__item">подключение внешнего CSS-файла;</li>
-        <li class="advantages-list__item">подготовка к разработке многостраничного сайта.</li>
-      </ul>
+      <div class="category-grid">
+        <a class="category-tile" href="catalog.html?type=audio">
+          <img src="images/unsplash/wave-320.webp" alt="" width="320" height="240" loading="lazy">
+          <span>Аудио</span><span class="category-tile__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="category-tile" href="catalog.html?type=wearables">
+          <img src="images/unsplash/fit-s-320.webp" alt="" width="320" height="240" loading="lazy">
+          <span>Умные часы</span><span class="category-tile__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="category-tile" href="catalog.html?type=work">
+          <img src="images/unsplash/k87-320.webp" alt="" width="320" height="240" loading="lazy">
+          <span>Для работы</span><span class="category-tile__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="category-tile" href="catalog.html?type=power">
+          <img src="images/pexels/station-320.webp" alt="" width="320" height="240" loading="lazy">
+          <span>Зарядка</span><span class="category-tile__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </section>
 
     <section class="section" id="popular">
-      <h2 class="section__title">Популярные товары</h2>
+      <div class="section__heading">
+        <h2 class="section__title">Популярные товары</h2>
+        <a class="section__more-link" href="catalog.html">Все товары <span aria-hidden="true">→</span></a>
+      </div>
 
       <div class="products-grid">
         <article class="product-card product-card--featured">
           <span class="product-card__badge product-card__badge--hit">Хит</span>
-          <img class="product-card__img" src="images/product-1.svg" alt="Беспроводные наушники Pulse" width="400" height="300">
+          <img class="product-card__img" src="images/unsplash/pulse-640.webp"
+               srcset="images/unsplash/pulse-320.webp 320w, images/unsplash/pulse-640.webp 640w, images/unsplash/pulse-960.webp 960w"
+               sizes="(max-width: 640px) calc(100vw - 66px), (max-width: 950px) calc(50vw - 70px), (max-width: 1312px) calc(33.33vw - 72px), 366px"
+               alt="Чёрные полноразмерные наушники на жёлтом фоне" width="640" height="480">
           <p class="product-card__category">Популярные</p>
           <h3 class="product-card__title"><a class="product-card__link" href="product.html">Беспроводные наушники Pulse</a></h3>
           <p class="product-card__description">Полноразмерные наушники с шумоподавлением и 30 часами работы.</p>
-          <p class="product-card__price">5990 руб.</p>
+          <p class="product-card__price">5&nbsp;990&nbsp;₽</p>
           <div class="product-card__actions">
-            <button class="button button--primary product-card__action product-card__button" type="button" data-product="Беспроводные наушники Pulse">Заказать</button>
-            <a class="button button--secondary product-card__action" href="product.html">Подробнее</a>
+            <button class="button button--primary product-card__action" type="button" data-cart-add="product-1">В корзину</button>
+            <a class="button button--secondary product-card__action" href="order.html?product=product-1" data-quick-order="product-1">Заказать в 1 клик</a>
           </div>
         </article>
 
         <article class="product-card">
-          <img class="product-card__img" src="images/product-2.svg" alt="Портативная колонка Wave" width="400" height="300">
+          <img class="product-card__img" src="images/unsplash/wave-640.webp"
+               srcset="images/unsplash/wave-320.webp 320w, images/unsplash/wave-640.webp 640w, images/unsplash/wave-960.webp 960w"
+               sizes="(max-width: 640px) calc(100vw - 66px), (max-width: 950px) calc(50vw - 70px), (max-width: 1312px) calc(33.33vw - 72px), 366px"
+               alt="Чёрная цилиндрическая колонка на деревянной поверхности" width="640" height="480">
           <p class="product-card__category">Популярные</p>
           <h3 class="product-card__title"><a class="product-card__link" href="product-2.html">Портативная колонка Wave</a></h3>
           <p class="product-card__description">Компактная колонка с защитой от воды и мощным звуком.</p>
-          <p class="product-card__price">3490 руб.</p>
+          <p class="product-card__price">3&nbsp;490&nbsp;₽</p>
           <div class="product-card__actions">
-            <button class="button button--primary product-card__action product-card__button" type="button" data-product="Портативная колонка Wave">Заказать</button>
-            <a class="button button--secondary product-card__action" href="product-2.html">Подробнее</a>
+            <button class="button button--primary product-card__action" type="button" data-cart-add="product-2">В корзину</button>
+            <a class="button button--secondary product-card__action" href="order.html?product=product-2" data-quick-order="product-2">Заказать в 1 клик</a>
           </div>
         </article>
 
         <article class="product-card product-card--discount">
           <span class="product-card__badge product-card__badge--sale">Скидка −20%</span>
-          <img class="product-card__img" src="images/product-3.svg" alt="Умные часы Fit S" width="400" height="300">
+          <img class="product-card__img" src="images/unsplash/fit-s-640.webp"
+               srcset="images/unsplash/fit-s-320.webp 320w, images/unsplash/fit-s-640.webp 640w, images/unsplash/fit-s-960.webp 960w"
+               sizes="(max-width: 640px) calc(100vw - 66px), (max-width: 950px) calc(50vw - 70px), (max-width: 1312px) calc(33.33vw - 72px), 366px"
+               alt="Умные часы с чёрным ремешком и цветным экраном" width="640" height="480">
           <p class="product-card__category">Популярные</p>
           <h3 class="product-card__title"><a class="product-card__link" href="product-3.html">Умные часы Fit S</a></h3>
           <p class="product-card__description">Пульс, сон, шаги и GPS – до 10 дней без зарядки.</p>
-          <p class="product-card__price">7190 руб. <s class="product-card__old-price">8990 руб.</s></p>
+          <p class="product-card__price">7&nbsp;190&nbsp;₽ <s class="product-card__old-price">8&nbsp;990&nbsp;₽</s></p>
           <div class="product-card__actions">
-            <button class="button button--primary product-card__action product-card__button" type="button" data-product="Умные часы Fit S">Заказать</button>
-            <a class="button button--secondary product-card__action" href="product-3.html">Подробнее</a>
+            <button class="button button--primary product-card__action" type="button" data-cart-add="product-3">В корзину</button>
+            <a class="button button--secondary product-card__action" href="order.html?product=product-3" data-quick-order="product-3">Заказать в 1 клик</a>
           </div>
         </article>
       </div>
 
-      <p class="section__more">
-        <a class="section__more-link" href="catalog.html">Смотреть весь каталог (9 товаров) &rarr;</a>
-      </p>
     </section>
-
-    <section class="section">
-      <h2 class="section__title">О проекте</h2>
-      <p>
-        В рамках данного проекта будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг. Проект будет постепенно
-        расширяться на следующих практических занятиях.
-      </p>
-    </section>
-
-    <aside class="aside-info">
-      <h2 class="aside-info__title">Информация для студентов</h2>
-      <p class="aside-info__text">
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
-      </p>
-    </aside>
   </main>
 
   <footer class="site-footer" id="contacts">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
-  </footer>
-
-  <a class="to-top" href="#top" aria-label="Вернуться в начало страницы">&uarr; Наверх</a>
-
-
-  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <button class="order-dialog__close" type="button" aria-label="Закрыть окно" data-close-dialog>&times;</button>
-
-    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-    <p class="order-dialog__product">Товар: <strong id="order-dialog-product">не выбран</strong></p>
-
-    <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      <input id="selected-product" name="selected-product" type="hidden">
-
-      <p class="order-form__note">Поля, отмеченные <span class="order-form__required">*</span>, обязательны для заполнения.</p>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Имя <span class="order-form__required" aria-hidden="true">*</span></label>
-        <input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" aria-describedby="order-name-error" required>
-        <p class="order-form__error" id="order-name-error" aria-live="polite"></p>
+    <div class="site-footer__inner">
+      <div>
+        <a class="site-footer__logo" href="index.html">Circuit<span> Lane</span></a>
+        <p class="site-footer__text">Электроника и аксессуары</p>
+        <p class="site-footer__text">&copy; 2026 Circuit Lane. Все права защищены.</p>
       </div>
 
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail <span class="order-form__required" aria-hidden="true">*</span></label>
-        <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" aria-describedby="order-email-error" required>
-        <p class="order-form__error" id="order-email-error" aria-live="polite"></p>
-      </div>
+      <nav class="site-footer__nav" aria-label="Навигация в подвале">
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="cart.html">Корзина</a>
+      </nav>
 
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-phone">Телефон <span class="order-form__required" aria-hidden="true">*</span></label>
-        <input class="order-form__input" id="order-phone" name="phone" type="tel" placeholder="+7 (900) 000-00-00" inputmode="tel" autocomplete="tel" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" aria-describedby="order-phone-hint order-phone-error" required>
-        <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
-        <p class="order-form__error" id="order-phone-error" aria-live="polite"></p>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-date">Дата связи</label>
-        <input class="order-form__input order-form__input--short" id="order-date" name="date" type="date" aria-describedby="order-date-error">
-        <p class="order-form__error" id="order-date-error" aria-live="polite"></p>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-topic">Тема заявки <span class="order-form__required" aria-hidden="true">*</span></label>
-        <select class="order-form__select" id="order-topic" name="topic" aria-describedby="order-topic-error" required>
-          <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
-        </select>
-        <p class="order-form__error" id="order-topic-error" aria-live="polite"></p>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-comment">Комментарий</label>
-        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
-      </div>
-
-      <div class="order-form__field order-form__field--checkbox">
-        <label class="order-form__label">
-          <input class="order-form__checkbox" id="order-agreement" name="agreement" type="checkbox" aria-describedby="order-agreement-error" required>
-          Я согласен на обработку данных <span class="order-form__required" aria-hidden="true">*</span>
-        </label>
-        <p class="order-form__error" id="order-agreement-error" aria-live="polite"></p>
-      </div>
-
-      <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog" data-close-dialog>Закрыть</button>
-        <button class="button button--primary" type="submit">Отправить заявку</button>
-      </div>
-    </form>
-
-    <div class="order-dialog__success" id="order-dialog-success" role="status" hidden>
-      <p class="order-dialog__success-icon" aria-hidden="true">&#10003;</p>
-      <p class="order-dialog__success-title">Заявка отправлена!</p>
-      <p class="order-dialog__success-text">Менеджер свяжется с вами в ближайшее время.</p>
-      <button class="button button--primary" type="button" data-close-dialog>Готово</button>
+      <a class="to-top" href="#top">Наверх <span aria-hidden="true">↑</span></a>
     </div>
-  </dialog>
+  </footer>
+  <p class="cart-notice" data-cart-notice role="status"></p>
 </body>
 </html>

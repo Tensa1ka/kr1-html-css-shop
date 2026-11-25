@@ -1,5 +1,27 @@
-// Скрипт подключён на главной (модальное окно) и на странице заявки,
-// поэтому перед работой с элементом проверяем, что он есть на странице.
+import { MAX_QUANTITY, cartTotal, getCartItems } from './cart.mjs';
+import { loadCart, onCartStorageChange } from './cart-store.mjs';
+import { formatPrice } from './product.mjs';
+import orderDialogTemplate from './order-dialog.html';
+
+function setDownload(link, fields, items) {
+  if (link.hasAttribute('href')) {
+    URL.revokeObjectURL(link.href);
+  }
+  const lines = [
+    'Circuit Lane — черновик заявки',
+    '',
+    ...items.map(item => `${item.name} × ${item.quantity} — ${formatPrice(item.price * item.quantity)}`),
+    `Сумма товаров: ${formatPrice(cartTotal(items))}`,
+    '',
+    `Имя: ${fields.get('name')}`,
+    `Телефон: ${fields.get('phone')}`,
+  ];
+  for (const [key, label] of [['email', 'E-mail'], ['comment', 'Комментарий']]) {
+    const value = fields.get(key);
+    if (value) lines.push(`${label}: ${value}`);
+  }
+  link.href = URL.createObjectURL(new Blob([lines.join('\n') + '\n'], { type: 'text/plain;charset=utf-8' }));
+}
 
 // ===============================
 // 1. Проверка полей формы с понятными сообщениями об ошибках
@@ -9,13 +31,17 @@
 function getErrorText(field) {
   const validity = field.validity;
 
+  if (field.id === 'order-phone' && field.value && !/^(?:7|8)\d{10}$/.test(field.value.replace(/\D/g, ''))) {
+    return 'Введите номер из 11 цифр, начиная с +7 или 8.';
+  }
+
   if (validity.valid) {
     return '';
   }
 
   if (validity.valueMissing) {
     if (field.type === 'checkbox') {
-      return 'Нужно согласие на обработку данных.';
+      return 'Подтвердите, что проверили данные заявки.';
     }
     if (field.tagName === 'SELECT') {
       return 'Выберите вариант из списка.';
@@ -24,7 +50,7 @@ function getErrorText(field) {
   }
 
   if (validity.typeMismatch && field.type === 'email') {
-    return 'Введите e-mail в формате name@example.ru.';
+    return 'Введите e-mail в формате name@example.com.';
   }
 
   if (validity.patternMismatch && field.type === 'tel') {
@@ -96,7 +122,7 @@ function setupForm(form, onSuccess) {
   });
 
   form.addEventListener('submit', (event) => {
-    // Backend пока не подключён, поэтому отменяем стандартную отправку.
+    // Заявка формируется локально в виде файла.
     event.preventDefault();
 
     const fields = Array.from(form.elements).filter((field) => field.willValidate);
@@ -108,60 +134,75 @@ function setupForm(form, onSuccess) {
       return;
     }
 
-    onSuccess();
-    form.reset();
+    if (onSuccess(new FormData(form)) !== false) {
+      form.reset();
+    }
   });
 }
 
 // ===============================
-// 2. Модальное окно заявки (главная страница)
+// 2. Заказ в один клик
 // ===============================
-const orderDialog = document.getElementById('order-dialog');
+if (typeof HTMLDialogElement !== 'undefined' && document.querySelector('[data-quick-order]')) {
+  document.body.insertAdjacentHTML('beforeend', orderDialogTemplate);
+  const dialog = document.getElementById('order-dialog');
+  const form = document.getElementById('order-form');
+  const success = document.getElementById('order-dialog-success');
+  const download = success.querySelector('[data-order-download]');
+  const productName = document.getElementById('order-dialog-product');
+  const quantity = document.getElementById('quick-quantity');
+  const total = form.querySelector('[data-quick-total]');
+  let productId;
 
-if (orderDialog) {
-  const orderForm = document.getElementById('order-form');
-  const orderButtons = document.querySelectorAll('.product-card__button');
-  const closeButtons = orderDialog.querySelectorAll('[data-close-dialog]');
-  const selectedProductInput = document.getElementById('selected-product');
-  const dialogProduct = document.getElementById('order-dialog-product');
-  const dialogSuccess = document.getElementById('order-dialog-success');
+  for (let value = 1; value <= MAX_QUANTITY; value += 1) {
+    quantity.options.add(new Option(value, value));
+  }
 
-  // Открываем окно: подставляем товар, показываем чистую форму.
-  orderButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const productName = button.dataset.product;
+  const selectedItems = () => getCartItems({ [productId]: Number(quantity.value) });
 
-      selectedProductInput.value = productName;
-      dialogProduct.textContent = productName;
+  function updateTotal() {
+    total.textContent = `Сумма товаров: ${formatPrice(cartTotal(selectedItems()))}`;
+  }
 
-      orderForm.reset();
-      clearErrors(orderForm);
-      orderForm.hidden = false;
-      dialogSuccess.hidden = true;
+  document.addEventListener('click', event => {
+    const trigger = event.target.closest('a[data-quick-order]');
+    if (!trigger || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
 
-      orderDialog.showModal();
-    });
+    event.preventDefault();
+    productId = trigger.dataset.quickOrder;
+    form.reset();
+    productName.textContent = selectedItems()[0].name;
+    updateTotal();
+    form.hidden = false;
+    success.hidden = true;
+    dialog.showModal();
   });
 
-  // Все кнопки с атрибутом data-close-dialog закрывают окно.
-  closeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      orderDialog.close();
-    });
+  quantity.addEventListener('change', updateTotal);
+  dialog.addEventListener('click', event => {
+    if (event.target.closest('[data-close-dialog]')) {
+      dialog.close();
+      return;
+    }
+    if (event.target === dialog) {
+      const { left, right, top, bottom } = dialog.getBoundingClientRect();
+      if (event.clientX < left || event.clientX > right || event.clientY < top || event.clientY > bottom) {
+        dialog.close();
+      }
+    }
   });
-
-  // Закрываем окно по клику на затемнённый фон вокруг него.
-  orderDialog.addEventListener('click', (event) => {
-    if (event.target === orderDialog) {
-      orderDialog.close();
+  dialog.addEventListener('close', () => {
+    if (download.hasAttribute('href')) {
+      URL.revokeObjectURL(download.href);
+      download.removeAttribute('href');
     }
   });
 
-  // После успешной отправки вместо формы показываем сообщение.
-  setupForm(orderForm, () => {
-    orderForm.hidden = true;
-    dialogSuccess.hidden = false;
-    dialogSuccess.querySelector('button').focus();
+  setupForm(form, fields => {
+    setDownload(download, fields, selectedItems());
+    form.hidden = true;
+    success.hidden = false;
+    download.focus();
   });
 }
 
@@ -172,18 +213,54 @@ const orderPageForm = document.getElementById('order-page-form');
 
 if (orderPageForm) {
   const successMessage = document.getElementById('success-message');
+  const download = successMessage.querySelector('[data-order-download]');
   const productSelect = document.getElementById('order-product');
+  const orderQuantity = document.getElementById('order-quantity');
+  const params = new URLSearchParams(window.location.search);
+  const cartMode = params.get('source') === 'cart';
 
-  // Если пришли по ссылке order.html?product=product-3, выбираем этот товар.
-  const productFromUrl = new URLSearchParams(window.location.search).get('product');
-  const hasProduct = Array.from(productSelect.options).some((option) => option.value === productFromUrl);
-
-  if (hasProduct) {
+  const productFromUrl = params.get('product');
+  if ([...productSelect.options].some(option => option.value === productFromUrl)) {
     productSelect.value = productFromUrl;
   }
 
-  setupForm(orderPageForm, () => {
+  function updateCartSummary(cart) {
+    const items = getCartItems(cart);
+    const list = orderPageForm.querySelector('[data-order-items]');
+    list.replaceChildren(...items.map(item => {
+      const line = document.createElement('li');
+      line.textContent = `${item.name} × ${item.quantity} — ${formatPrice(item.quantity * item.price)}`;
+      return line;
+    }));
+    orderPageForm.querySelector('[data-order-total]').textContent = items.length
+      ? `Сумма товаров: ${formatPrice(cartTotal(items))}` : '';
+    orderPageForm.querySelector('[data-order-empty]').hidden = items.length > 0;
+    orderPageForm.querySelector('[type="submit"]').disabled = items.length === 0;
+  }
+
+  if (cartMode) {
+    orderPageForm.querySelector('[data-direct-order]').hidden = true;
+    productSelect.disabled = orderQuantity.disabled = true;
+    orderPageForm.querySelector('[data-order-cart]').hidden = false;
+    updateCartSummary(loadCart());
+    onCartStorageChange(cart => {
+      updateCartSummary(cart);
+      successMessage.hidden = true;
+    });
+  }
+
+  setupForm(orderPageForm, fields => {
+    const cart = cartMode ? loadCart() : { [productSelect.value]: Number(orderQuantity.value) };
+    const items = getCartItems(cart);
+    if (!items.length) {
+      updateCartSummary(cart);
+      return false;
+    }
+
+    setDownload(download, fields, items);
     successMessage.hidden = false;
     successMessage.focus();
   });
+  orderPageForm.addEventListener('input', () => { successMessage.hidden = true; });
+  orderPageForm.hidden = false;
 }
